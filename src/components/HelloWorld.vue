@@ -12,7 +12,14 @@
 </template>
 
 <script lang="ts">
-import {state, value, computed, watch, onMounted} from 'vue-function-api'
+import {
+  state,
+  value,
+  computed,
+  watch,
+  onMounted,
+  onUnmounted,
+} from 'vue-function-api'
 
 export default {
   setup() {
@@ -82,6 +89,20 @@ export default {
       Math.ceil((index.value / questions.length) * 100),
     )
 
+    function onKey({key}) {
+      if (key === 'ArrowLeft') prev()
+      if (key === 'ArrowRight') next()
+      if (key === ' ') next()
+    }
+
+    onMounted(() => {
+      window.addEventListener('keydown', onKey)
+    })
+
+    onUnmounted(() => {
+      window.removeEventListener('keydown', onKey)
+    })
+
     return {index, question, prev, next, progress}
   },
 }
@@ -114,7 +135,8 @@ button {
   text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
-button:focus {
+button:focus,
+button:hover {
   color: #9b59b6;
   text-shadow: 1px 1px 1px #9c59b66b;
 }
