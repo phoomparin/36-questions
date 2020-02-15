@@ -94,7 +94,7 @@ export default {
       Math.ceil((index.value / questions.length) * 100),
     )
 
-    function onKey({key}) {
+		function onKey({key}: {key: any}) {
       if (key === 'ArrowLeft') prev()
       if (key === 'ArrowRight') next()
       if (key === ' ') next()
