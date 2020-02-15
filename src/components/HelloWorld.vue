@@ -66,6 +66,11 @@ export default {
       '34. Your house, containing everything you own, catches fire. After saving your loved ones and pets, you have time to safely make a final dash to save any one item. What would it be? Why?',
       '35. Of all the people in your family, whose death would you find most disturbing? Why?',
       '36. Share a personal problem and ask your partner’s advice on how he or she might handle it. Also, ask your partner to reflect back to you how you seem to be feeling about the problem you have chosen.',
+      '37. Congratulations! You have answered all the questions! Now, for the hard part...',
+      "You have to look into your partner's eyes for 4 minutes, in silence.",
+      "It's hard, and you'll squirm. But you'll learn an incredible amount.",
+      'Good Luck.',
+      '38. I have something to tell you. 🦄',
     ]
 
     const questions = [...questions1, ...questions2, ...questions3]
